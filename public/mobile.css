@@ -16,3 +16,6 @@
     border-bottom: 1px solid rgba(255,255,255,.12);
   }
 }
+:root {
+  --orange: #13b8ce;
+}
