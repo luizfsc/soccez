@@ -1,0 +1,16 @@
+{
+  "name": "soccez",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve": "firebase emulators:start --only hosting",
+    "deploy": "firebase deploy --only hosting"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "firebase": "^12.18.0"
+  }
+}

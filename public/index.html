@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Soccez — gestão, produção e desenvolvimento de propriedades esportivas.">
+  <meta name="theme-color" content="#13b8ce">
+  <title>Soccez | Propriedades esportivas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/mobile.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="simulation-modal" id="simulationModal" role="dialog" aria-modal="true" aria-labelledby="simulationTitle">
+    <div class="modal-card">
+      <span class="eyebrow">Apresentação institucional</span>
+      <h2 id="simulationTitle">Este é um ambiente demonstrativo.</h2>
+      <p>Conteúdos, datas, números e propriedades apresentados nesta página são simulações para visualização do projeto Soccez.</p>
+      <button class="button button-primary" id="closeModal">Entendi, continuar</button>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Soccez — início"><img src="/assets/soccez-logo.png" alt="Soccez"></a>
+    <nav aria-label="Navegação principal">
+      <a href="#propriedade">Propriedade</a><a href="#etapas">Próximas etapas</a><a href="#publicos">Para quem</a><a href="#tecnologia">Tecnologia</a>
+    </nav>
+    <a class="header-cta" href="https://ticketez.com.br" target="_blank" rel="noopener">Ver inscrições <span>↗</span></a>
+    <button class="menu-button" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-image" src="/assets/hero.jpg.png" alt="Jovens atletas entrando em campo diante da torcida">
+      <div class="hero-shade"></div>
+      <div class="hero-content reveal">
+        <span class="eyebrow light">A próxima geração entra em campo</span>
+        <h1>Transformamos futebol em <em>propriedades de valor.</em></h1>
+        <p>Estratégia, operação e experiência para eventos que conectam atletas, clubes, famílias e grandes marcas.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#etapas">Conheça as próximas etapas</a><a class="text-link" href="#propriedade">Nossa atuação <span>↓</span></a></div>
+      </div>
+      <div class="hero-stamp"><b>Produced by</b><span>Soccez</span></div>
+    </section>
+
+    <section class="manifesto section" id="propriedade">
+      <div class="section-heading reveal"><span class="eyebrow">Muito além do calendário</span><h2>Não organizamos apenas eventos.<br><em>Construímos ativos esportivos.</em></h2></div>
+      <div class="manifesto-copy reveal"><p>Cada propriedade nasce para ter identidade, recorrência e valor comercial. Da primeira inscrição ao último conteúdo publicado, tudo faz parte da mesma experiência.</p><a href="#publicos" class="arrow-link">Entenda o ecossistema <span>↘</span></a></div>
+    </section>
+
+    <section class="stages section" id="etapas">
+      <div class="section-heading reveal"><span class="eyebrow">Leandro Guerreiro Cup</span><h2>Próximas etapas</h2><p>O mesmo padrão de experiência. Novos campos, cidades e histórias.</p></div>
+      <div class="carousel reveal" aria-label="Carrossel das próximas etapas">
+        <div class="carousel-track" id="carouselTrack">
+          <article class="stage-card"><img src="/assets/etapa-belo-horizonte.png" alt="Etapa Belo Horizonte"><div class="stage-overlay"><span>01 · Minas Gerais</span><h3>Etapa<br>Belo Horizonte</h3><div><p>Em breve · Data simulada</p><a href="https://ticketez.com.br" target="_blank" rel="noopener">Inscrições na TicketEZ ↗</a></div></div></article>
+          <article class="stage-card"><img src="/assets/etapa-uberaba.png" alt="Etapa Uberaba"><div class="stage-overlay"><span>02 · Minas Gerais</span><h3>Etapa<br>Uberaba</h3><div><p>Em breve · Data simulada</p><a href="https://ticketez.com.br" target="_blank" rel="noopener">Inscrições na TicketEZ ↗</a></div></div></article>
+          <article class="stage-card"><img src="/assets/etapa-contagem.png" alt="Etapa Contagem"><div class="stage-overlay"><span>03 · Minas Gerais</span><h3>Etapa<br>Contagem</h3><div><p>Em breve · Data simulada</p><a href="https://ticketez.com.br" target="_blank" rel="noopener">Inscrições na TicketEZ ↗</a></div></div></article>
+        </div>
+        <div class="carousel-controls"><button data-dir="-1" aria-label="Etapa anterior">←</button><div class="progress"><i></i></div><button data-dir="1" aria-label="Próxima etapa">→</button></div>
+      </div>
+    </section>
+
+    <section class="ticket-partner section reveal">
+      <div class="ticket-photo"><img src="/assets/ticketez-football.png" alt="Atleta acessando evento de futebol com ingresso digital"></div>
+      <div class="ticket-copy"><img src="/assets/ticketez.png" alt="TicketEZ"><span class="eyebrow light">Parceira oficial de infraestrutura</span><h2>Do ingresso ao acesso.<br><em>Uma jornada sem atrito.</em></h2><p>Inscrições, credenciamento e entrada conectados em uma experiência preparada para grandes eventos de futebol.</p><a class="button button-white" href="https://ticketez.com.br" target="_blank" rel="noopener">Conheça a TicketEZ ↗</a></div>
+    </section>
+
+    <section class="audiences section" id="publicos">
+      <div class="section-heading reveal"><span class="eyebrow">Um evento. Diferentes jornadas.</span><h2>Valor para todo o ecossistema.</h2></div>
+      <div class="audience-grid">
+        <article class="audience reveal"><span>01</span><h3>Para atletas</h3><p>Palco, visibilidade e uma experiência que continua depois do apito final.</p><a href="#tecnologia">Conheça a jornada →</a></article>
+        <article class="audience reveal"><span>02</span><h3>Para clubes</h3><p>Ambiente qualificado para observar talentos, conectar projetos e fortalecer a formação.</p><a href="#contato">Fale com a Soccez →</a></article>
+        <article class="audience reveal"><span>03</span><h3>Para marcas</h3><p>Presença relevante, ativações reais e relacionamento com uma comunidade apaixonada.</p><a href="#contato">Construa uma parceria →</a></article>
+      </div>
+    </section>
+
+    <section class="numbers section" aria-labelledby="numbersTitle">
+      <div class="numbers-intro reveal"><span class="eyebrow">Impacto potencial · números simulados</span><h2 id="numbersTitle">Resultados que<br><em>continuam crescendo.</em></h2></div>
+      <div class="numbers-grid">
+        <div class="number reveal"><b>500 mil+</b><span>de alcance e presença digital</span></div>
+        <div class="number reveal"><b>25 mil+</b><span>presenças de familiares</span></div>
+        <div class="number reveal"><b>3.500+</b><span>atletas impactados</span></div>
+        <div class="number reveal"><b>10+</b><span>selecionados para categorias de base</span></div>
+      </div>
+    </section>
+
+    <section class="technology" id="tecnologia">
+      <div class="technology-copy section reveal"><div><span class="eyebrow light">Tecnologia que dá continuidade</span><h2>O evento termina.<br><em>A história do atleta permanece.</em></h2></div><p>Com a DRAFuT, cada participação pode alimentar um perfil digital com histórico, dados e evolução. Mais contexto para atletas. Mais inteligência para clubes.</p></div>
+      <div class="technology-visual section"><img class="drafut-logo" src="/assets/drafut.png" alt="DRAFuT"><div class="phone reveal"><div class="phone-top"><span>Perfil do atleta</span><i></i></div><div class="avatar"></div><h3>Uma trajetória em construção.</h3><div class="profile-row"><span>Participações</span><b>04</b></div><div class="profile-row"><span>Competições</span><b>03</b></div><div class="profile-row"><span>Observações</span><b>12</b></div></div><div class="tech-caption reveal"><span>Perfil digital</span><span>Histórico de eventos</span><span>Dados & scouting</span></div></div>
+    </section>
+
+    <section class="partners section"><span class="eyebrow">Conexões que fortalecem o jogo</span><div class="partner-row"><img src="/assets/supermercados-bh.png" alt="Supermercados BH"><img src="/assets/coimbra.png" alt="Coimbra FC Porto"><img src="/assets/cruzeiro.png" alt="Cruzeiro Esporte Clube"></div></section>
+
+    <section class="closing section" id="contato"><div><span class="eyebrow light">Entre em campo com a gente</span><h2>Sua marca pode fazer parte<br>do próximo grande jogo.</h2></div><a class="button button-white" href="mailto:contato@soccez.com.br">Vamos conversar ↗</a></section>
+  </main>
+
+  <footer><a class="brand" href="#top"><img src="/assets/soccez-logo.png" alt="Soccez"></a><p>Gestão, produção e desenvolvimento<br>de propriedades esportivas.</p><div><a href="https://ticketez.com.br" target="_blank" rel="noopener">TicketEZ ↗</a><span>© 2026 Soccez</span></div></footer>
+</body>
+</html>
