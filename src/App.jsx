@@ -5,9 +5,11 @@ import { BR, US } from 'country-flag-icons/react/3x2'
 
 const ticketUrl = 'https://ticketez.com.br'
 const stages = [
-  { city: 0, state: 'Minas Gerais', image: '/assets/etapa-belo-horizonte.png' },
-  { city: 1, state: 'Minas Gerais', image: '/assets/etapa-uberaba.png' },
-  { city: 2, state: 'Minas Gerais', image: '/assets/etapa-contagem.png' },
+  { image: '/assets/etapa-belo-horizonte.png', propertyLogo: '/assets/supermercados-bh.png' },
+  { image: '/assets/hero.jpg.png', propertyLogo: '/assets/supermercados-bh.png' },
+  { image: '/assets/etapa-uberaba.png', propertyLogo: '/assets/supermercados-bh.png' },
+  { image: '/assets/etapa-contagem.png', propertyLogo: '/assets/coimbra.png' },
+  { image: '/assets/hero.jpg.png', propertyLogo: '/assets/cruzeiro.png' },
 ]
 
 function LanguageSwitch() {
@@ -36,6 +38,7 @@ function App() {
   const audienceKeys = ['athlete', 'club', 'brand']
   const partnerLogos = [
     ['/assets/supermercados-bh.png', 'Supermercados BH'],
+    ['/assets/ticketez.png', 'TicketEZ'],
     ['/assets/coimbra.png', 'Coimbra FC Porto'],
     ['/assets/cruzeiro.png', 'Cruzeiro Esporte Clube'],
   ]
@@ -86,9 +89,10 @@ function App() {
           <span className="eyebrow">{t('stages.eyebrow')}</span>
           <div className="section-title-row"><h2>{t('stages.title')}</h2><p>{t('stages.text')}</p></div>
           <div className="stage-frame">
-            <img src={stages[stage].image} alt={`${t('stages.eyebrow')} ${t(`cities.${stage}`)}`} />
+            <img src={stages[stage].image} alt={t(`stages.items.${stage}.1`)} />
             <div className="stage-shade" />
-            <div className="stage-copy"><span>0{stage + 1} · {stages[stage].state}</span><h3>{t(`cities.${stage}`)}</h3><div><p>{t('stages.soon')}</p><a href={ticketUrl} target="_blank" rel="noreferrer">{t('stages.ticket')} <ArrowUpRight size={18} /></a></div></div>
+            <div className="stage-sponsors"><span>Realização e tecnologia</span><img src="/assets/supermercados-bh.png" alt="Supermercados BH"/><img src="/assets/ticketez.png" alt="TicketEZ"/></div>
+            <div className="stage-copy"><span>0{stage + 1} · {t(`stages.items.${stage}.1`)}</span><div className="stage-name"><img src={stages[stage].propertyLogo} alt=""/><h3>{t(`stages.items.${stage}.0`)}</h3></div><div><p>{t('stages.soon')}</p><a href={ticketUrl} target="_blank" rel="noreferrer">{t('stages.ticket')} <ArrowUpRight size={18} /></a></div></div>
           </div>
           <div className="carousel-controls"><button onClick={() => setStage((stage + stages.length - 1) % stages.length)} aria-label={t('stages.previous')}><ArrowLeft /></button><div className="progress">{stages.map((_, i) => <i className={i === stage ? 'active' : ''} key={i} />)}</div><button onClick={() => setStage((stage + 1) % stages.length)} aria-label={t('stages.next')}><ArrowRight /></button></div>
         </div>
@@ -104,6 +108,15 @@ function App() {
         <div className="audience-grid">{audienceKeys.map((key, i) => { const copy = t(`audiences.${key}`, { returnObjects: true }); return <article key={key}><span>0{i+1}</span><div><small>{copy[0]}</small><h3>{copy[1]}</h3><p>{copy[2]}</p></div><a href="#contato">{t('audiences.more')} <ArrowUpRight size={16}/></a></article> })}</div>
       </section>
 
+      <section className="section business-section">
+        <div className="page-width"><span className="eyebrow">{t('business.eyebrow')}</span><h2>{t('business.title')}</h2>
+          <div className="business-grid">
+            <article className="business-card club-card"><span>01</span><h3>{t('business.clubTitle')}</h3><p>{t('business.clubText')}</p><ul>{t('business.clubItems',{returnObjects:true}).map(item=><li key={item}><CheckCircle2 size={17}/>{item}</li>)}</ul><a className="button primary" href="mailto:contato@soccez.com.br?subject=Clube%20parceiro">{t('business.clubCta')} <ArrowUpRight size={17}/></a></article>
+            <article className="business-card brand-card"><span>02</span><h3>{t('business.brandTitle')}</h3><p>{t('business.brandText')}</p><ul>{t('business.brandItems',{returnObjects:true}).map(item=><li key={item}><CheckCircle2 size={17}/>{item}</li>)}</ul><a className="button white" href="mailto:contato@soccez.com.br?subject=Patrocínio">{t('business.brandCta')} <ArrowUpRight size={17}/></a></article>
+          </div>
+        </div>
+      </section>
+
       <section className="section numbers"><div className="page-width numbers-inner"><div><span className="eyebrow">{t('numbers.eyebrow')}</span><h2>{t('numbers.title')}</h2></div><div className="number-grid">{t('numbers.items', { returnObjects: true }).map(([value,label]) => <div className="number-card" key={label}><strong>{value}</strong><span>{label}</span></div>)}</div></div></section>
 
       <section id="tecnologia" className="section technology">
@@ -111,7 +124,11 @@ function App() {
         <div className="tech-visual"><img className="drafut-logo" src="/assets/drafut.png" alt="DRAFuT" /><div className="phone"><div className="phone-head"><span>Soccez ID</span><CheckCircle2 size={16} /></div><div className="avatar" /><h3>{t('tech.profile')}</h3>{[[t('tech.label1'),t('tech.value1')],[t('tech.label2'),t('tech.value2')],[t('tech.label3'),t('tech.value3')]].map(([a,b]) => <div className="profile-row" key={a}><span>{a}</span><b>{b}</b></div>)}</div><div className="tech-chips">{t('tech.chips',{returnObjects:true}).map(c=><span key={c}>{c}</span>)}</div></div>
       </section>
 
-      <section className="section partners page-width"><span className="eyebrow">{t('partners.eyebrow')}</span><h2>{t('partners.title')}</h2><div>{partnerLogos.map(([src,alt])=><img src={src} alt={alt} key={src}/>)}</div></section>
+      <section className="section owned-properties">
+        <div className="page-width"><span className="eyebrow">{t('properties.eyebrow')}</span><h2>{t('properties.title')}</h2><article className="property-feature"><div className="property-art"><img src="/assets/leandro-cup.png" alt="Leandro Guerreiro Cup"/><span>{t('properties.badge')}</span></div><div><span className="property-index">01 / PROPRIEDADE</span><h3>{t('properties.cupTitle')}</h3><p>{t('properties.cupText')}</p><a href="#contato">Produced by Soccez <ArrowUpRight size={17}/></a></div></article></div>
+      </section>
+
+      <section className="section partners page-width"><span className="eyebrow">{t('partners.eyebrow')}</span><h2>{t('partners.title')}</h2><p>{t('partners.text')}</p><div>{partnerLogos.map(([src,alt],i)=><div className={`partner-logo ${i===0?'featured':''}`} key={src}><img src={src} alt={alt}/></div>)}</div></section>
       <section id="contato" className="section closing"><div className="page-width closing-inner"><div><span className="eyebrow light">{t('closing.eyebrow')}</span><h2>{t('closing.title1')} <em>{t('closing.title2')}</em></h2></div><a className="button white" href="mailto:contato@soccez.com.br">{t('closing.cta')} <ArrowUpRight size={17}/></a></div></section>
     </main>
 
