@@ -62,7 +62,9 @@ em { color: #13b8ce; font-style: italic; }
 .stage-name { display: flex; align-items: center; gap: 24px; max-width: 850px; }
 .stage-name img { width: 110px; height: 92px; padding: 8px; border-radius: 8px; background: #ffffffed; object-fit: contain; }
 .stage-copy h3 { font-size: clamp(3.8rem, 6.2vw, 5.7rem); }
-.stage-copy>div { display: flex; align-items: end; justify-content: space-between; }
+.stage-heading { display: flex; align-items: flex-start; flex-direction: column; gap: 15px; }
+.stage-location { margin-left: 134px; padding-left: 16px; border-left: 3px solid #13b8ce; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+.stage-copy>div:last-child { display: flex; align-items: end; justify-content: space-between; }
 .stage-copy p { margin: 0; font-size: .8rem; }
 .stage-copy a { display: flex; align-items: center; gap: 7px; font-size: .84rem; font-weight: 800; }
 .stage-sponsors { position: absolute; z-index: 3; top: 24px; right: 24px; display: flex; align-items: center; gap: 14px; padding: 9px 12px; border-radius: 6px; background: #fff; box-shadow: 0 10px 35px #0018; }
@@ -111,7 +113,7 @@ em { color: #13b8ce; font-style: italic; }
 .tech-intro { display: grid; grid-template-columns: 1fr .65fr; gap: 8vw; padding-bottom: 76px; }
 .tech-intro p { align-self: end; color: #bcd0db; font-size: 1.05rem; }
 .tech-visual { position: relative; display: flex; min-height: 720px; align-items: center; justify-content: center; overflow: hidden; background: radial-gradient(circle at center, #167a91, #08283f 56%); }
-.drafut-logo { position: absolute; top: 55px; left: 7vw; width: 210px; mix-blend-mode: screen; }
+.drafut-logo { position: absolute; top: 55px; left: 7vw; width: 210px; height: auto; }
 .phone { width: 350px; padding: 24px 27px 32px; border: 7px solid #051b2b; border-radius: 40px; background: white; color: #08283f; box-shadow: 0 35px 100px #0007; }
 .phone-head, .profile-row { display: flex; align-items: center; justify-content: space-between; }
 .phone-head { font-size: .7rem; font-weight: 800; }
@@ -142,10 +144,11 @@ em { color: #13b8ce; font-style: italic; }
 .closing { background: #13b8ce; color: white; }
 .closing-inner { display: flex; align-items: end; justify-content: space-between; }
 .closing em { color: white; }
-footer { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; padding-block: 48px; color: white; background: #08283f; }
-footer img { width: 180px; }
-footer p { color: #b8cbd6; font-size: .78rem; }
-footer>div { display: flex; justify-content: end; gap: 28px; font-size: .72rem; }
+footer { width: 100%; padding-block: 48px; color: white; background: #08283f; overflow: hidden; }
+.footer-inner { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 24px; }
+footer img { width: 180px; max-height: 64px; object-fit: contain; }
+footer p { margin: 0; color: #b8cbd6; font-size: .78rem; }
+.footer-inner>div { display: flex; justify-content: end; gap: 28px; font-size: .72rem; }
 .modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 20px; background: #051e31d9; backdrop-filter: blur(9px); }
 .modal-card { width: min(530px,100%); padding: 48px; border-radius: 12px; background: white; box-shadow: 0 30px 90px #0005; }
 .modal-card h2 { font-size: 3.2rem; }
@@ -174,8 +177,8 @@ footer>div { display: flex; justify-content: end; gap: 28px; font-size: .72rem; 
   .property-art { min-height: 400px; }
   .partners>div { grid-template-columns: repeat(2,1fr); }
   .closing-inner { align-items: start; flex-direction: column; gap: 36px; }
-  footer { grid-template-columns: 1fr; gap: 20px; }
-  footer>div { justify-content: start; }
+  .footer-inner { grid-template-columns: 1fr; gap: 20px; }
+  .footer-inner>div { justify-content: start; }
 }
 
 @media (max-width: 600px) {
@@ -193,7 +196,8 @@ footer>div { display: flex; justify-content: end; gap: 28px; font-size: .72rem; 
   .stage-sponsors { top: 16px; right: 16px; }
   .stage-sponsors span { display: none; }
   .stage-sponsors img { width: 62px; height: 30px; }
-  .stage-copy>div { align-items: start; flex-direction: column; gap: 12px; }
+  .stage-location { margin-left: 0; }
+  .stage-copy>div:last-child { align-items: start; flex-direction: column; gap: 12px; }
   .ticket-image { height: 340px; }
   .ticket-copy>img { width: 200px; }
   .number-grid { grid-template-columns: 1fr; }

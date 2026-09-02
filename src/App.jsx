@@ -92,7 +92,7 @@ function App() {
             <img src={stages[stage].image} alt={t(`stages.items.${stage}.1`)} />
             <div className="stage-shade" />
             <div className="stage-sponsors"><span>Realização e tecnologia</span><img src="/assets/supermercados-bh.png" alt="Supermercados BH"/><img src="/assets/ticketez.png" alt="TicketEZ"/></div>
-            <div className="stage-copy"><span>0{stage + 1} · {t(`stages.items.${stage}.1`)}</span><div className="stage-name"><img src={stages[stage].propertyLogo} alt=""/><h3>{t(`stages.items.${stage}.0`)}</h3></div><div><p>{t('stages.soon')}</p><a href={ticketUrl} target="_blank" rel="noreferrer">{t('stages.ticket')} <ArrowUpRight size={18} /></a></div></div>
+            <div className="stage-copy"><span>0{stage + 1}</span><div className="stage-heading"><div className="stage-name"><img src={stages[stage].propertyLogo} alt=""/><h3>{t(`stages.items.${stage}.0`)}</h3></div><strong className="stage-location">{t(`stages.items.${stage}.1`)}</strong></div><div><p>{t('stages.soon')}</p><a href={ticketUrl} target="_blank" rel="noreferrer">{t('stages.ticket')} <ArrowUpRight size={18} /></a></div></div>
           </div>
           <div className="carousel-controls"><button onClick={() => setStage((stage + stages.length - 1) % stages.length)} aria-label={t('stages.previous')}><ArrowLeft /></button><div className="progress">{stages.map((_, i) => <i className={i === stage ? 'active' : ''} key={i} />)}</div><button onClick={() => setStage((stage + 1) % stages.length)} aria-label={t('stages.next')}><ArrowRight /></button></div>
         </div>
@@ -132,7 +132,7 @@ function App() {
       <section id="contato" className="section closing"><div className="page-width closing-inner"><div><span className="eyebrow light">{t('closing.eyebrow')}</span><h2>{t('closing.title1')} <em>{t('closing.title2')}</em></h2></div><a className="button white" href="mailto:contato@soccez.com.br">{t('closing.cta')} <ArrowUpRight size={17}/></a></div></section>
     </main>
 
-    <footer className="page-width"><img src="/assets/soccez-logo.png" alt="Soccez"/><p>{t('footer.text')}</p><div><a href="#">{t('footer.privacy')}</a><a href="#">{t('footer.terms')}</a></div></footer>
+    <footer><div className="page-width footer-inner"><img src="/assets/soccez-logo.png" alt="Soccez"/><p>{t('footer.text')}</p><div><a href="#">{t('footer.privacy')}</a><a href="#">{t('footer.terms')}</a></div></div></footer>
   </div>
 }
 
