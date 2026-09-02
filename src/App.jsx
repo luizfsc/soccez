@@ -35,7 +35,6 @@ function App() {
   }, [modalOpen])
 
   const nav = [['property', 'propriedade'], ['stages', 'etapas'], ['audiences', 'publicos'], ['partners', 'parceiros'], ['technology', 'tecnologia']]
-  const audienceKeys = ['athlete', 'club', 'brand']
   const partnerLogos = [
     ['/assets/supermercados-bh.png', 'Supermercados BH'],
     ['/assets/ticketez.png', 'TicketEZ'],
@@ -104,17 +103,7 @@ function App() {
         </div>
       </section>
 
-      <section className="ticket-section">
-        <div className="ticket-image"><img src="/assets/ticketez-football.png" alt="TicketEZ football" /></div>
-        <div className="ticket-copy"><img src="/assets/ticketez.png" alt="TicketEZ" /><span className="eyebrow light">{t('ticket.eyebrow')}</span><h2>{t('ticket.title1')} <em>{t('ticket.title2')}</em></h2><p>{t('ticket.text')}</p><a href={ticketUrl} target="_blank" rel="noreferrer" className="button white">{t('ticket.cta')} <ArrowUpRight size={17} /></a></div>
-      </section>
-
-      <section id="publicos" className="section audiences page-width">
-        <span className="eyebrow">{t('audiences.eyebrow')}</span><h2>{t('audiences.title')}</h2>
-        <div className="audience-grid">{audienceKeys.map((key, i) => { const copy = t(`audiences.${key}`, { returnObjects: true }); return <article key={key}><span>0{i+1}</span><div><small>{copy[0]}</small><h3>{copy[1]}</h3><p>{copy[2]}</p></div><a href="#contato">{t('audiences.more')} <ArrowUpRight size={16}/></a></article> })}</div>
-      </section>
-
-      <section className="section business-section">
+      <section id="publicos" className="section business-section">
         <div className="page-width"><span className="eyebrow">{t('business.eyebrow')}</span><h2>{t('business.title')}</h2>
           <div className="business-grid">
             <article className="business-card academy-card"><span>01</span><h3>{t('business.academyTitle')}</h3><p>{t('business.academyText')}</p><ul>{t('business.academyItems',{returnObjects:true}).map(item=><li key={item}><CheckCircle2 size={17}/>{item}</li>)}</ul><a className="button primary" href="mailto:contato@soccez.com.br?subject=Escolinha%20parceira">{t('business.academyCta')} <ArrowUpRight size={17}/></a></article>
@@ -128,13 +117,16 @@ function App() {
 
       <section className="section owned-properties">
         <div className="page-width"><span className="eyebrow">{t('properties.eyebrow')}</span><h2>{t('properties.title')}</h2><article className="property-feature"><div className="property-art"><img src="/assets/leandro-cup.png" alt="Leandro Guerreiro Cup"/><span>{t('properties.badge')}</span></div><div><span className="property-index">01 / PROPRIEDADE</span><h3>{t('properties.cupTitle')}</h3><p>{t('properties.cupText')}</p><a href="#contato">Produced by Soccez <ArrowUpRight size={17}/></a></div></article>
-          <div className="property-grid">{propertyCards.map(([image,logo],i)=>{const copy=t(`properties.items.${i}`,{returnObjects:true});return <article className="property-card" key={copy[0]}><img className="property-bg" src={image} alt=""/><div className="property-card-shade"/><img className="property-logo" src={logo} alt={copy[0]}/><div><span>0{i+2} / PROPRIEDADE</span><h3>{copy[0]}</h3><p>{copy[1]}</p></div></article>})}</div>
+          <div className="property-grid">{propertyCards.map(([image,logo],i)=>{const copy=t(`properties.items.${i}`,{returnObjects:true});return <article className="property-card" key={copy[0]}><img className="property-bg" src={image} alt=""/><div className="property-card-shade"/><img className="property-logo" src={logo} alt={copy[0]}/><div><span>0{i+2} / {t('properties.collaboration')}</span><h3>{copy[0]}</h3><p>{copy[1]}</p></div></article>})}</div>
         </div>
       </section>
 
       <section id="parceiros" className="section partners page-width"><span className="eyebrow">{t('partners.eyebrow')}</span><h2>{t('partners.title')}</h2><p>{t('partners.text')}</p><div>{partnerLogos.map(([src,alt],i)=><div className={`partner-logo ${i===0?'featured':''}`} key={src}><img src={src} alt={alt}/></div>)}</div></section>
 
-      <section id="tecnologia" className="tech-compact"><img className="tech-compact-bg" src="/assets/drafut-matchos-infrastructure.png" alt="Infraestrutura tecnológica para análise e scouting no futebol"/><div className="tech-compact-shade"/><div className="page-width tech-compact-content"><div><span className="eyebrow light">{t('tech.eyebrow')}</span><div className="tech-brands"><img src="/assets/drafut.png" alt="DRAFuT"/><b>+</b><strong>MatchOS</strong></div><h2>{t('tech.title2')}</h2><p>{t('tech.text')}</p></div><div className="tech-feature-list">{t('tech.chips',{returnObjects:true}).map((c,i)=><span key={c}><b>0{i+1}</b>{c}</span>)}</div></div></section>
+      <section id="tecnologia" className="technology-banners">
+        <a className="ticket-cover page-width" href={ticketUrl} target="_blank" rel="noreferrer"><img src="/assets/ticketez-football.png" alt="TicketEZ para eventos de futebol"/><div className="ticket-cover-shade"/><div><img src="/assets/ticketez.png" alt="TicketEZ"/><span>{t('ticket.eyebrow')}</span><h3>{t('ticket.title1')} {t('ticket.title2')}</h3><strong>{t('ticket.cta')} <ArrowUpRight size={17}/></strong></div></a>
+        <div className="tech-light page-width"><img className="tech-light-bg" src="/assets/drafut-matchos-light.png" alt="Infraestrutura tecnológica clara para análise e scouting no futebol"/><div className="tech-light-shade"/><div className="tech-light-content"><span className="eyebrow">{t('tech.eyebrow')}</span><div className="tech-brands"><img src="/assets/drafut.png" alt="DRAFuT"/><b>+</b><strong>MatchOS</strong></div><h2>{t('tech.title2')}</h2><p>{t('tech.text')}</p><div className="tech-pills">{t('tech.chips',{returnObjects:true}).map(c=><span key={c}>{c}</span>)}</div></div></div>
+      </section>
       <section id="contato" className="section closing"><div className="page-width closing-inner"><div><span className="eyebrow light">{t('closing.eyebrow')}</span><h2>{t('closing.title1')} <em>{t('closing.title2')}</em></h2></div><a className="button white" href="mailto:contato@soccez.com.br">{t('closing.cta')} <ArrowUpRight size={17}/></a></div></section>
     </main>
 
