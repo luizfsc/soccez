@@ -45,7 +45,7 @@ function App() {
     ['/assets/etapa-belo-horizonte.png', '/assets/supermercados-bh.png'],
     ['/assets/hero.jpg.png', '/assets/cruzeiro.png'],
     ['/assets/etapa-contagem.png', '/assets/coimbra.png'],
-    ['/assets/ticketez-football.png', '/assets/ticketez.png'],
+    ['/assets/ticketez-mineirao-v2.png', '/assets/ticketez.png'],
   ]
 
   return <div className="app-shell">
@@ -124,7 +124,7 @@ function App() {
       <section id="parceiros" className="section partners page-width"><span className="eyebrow">{t('partners.eyebrow')}</span><h2>{t('partners.title')}</h2><p>{t('partners.text')}</p><div>{partnerLogos.map(([src,alt],i)=><div className={`partner-logo ${i===0?'featured':''}`} key={src}><img src={src} alt={alt}/></div>)}</div></section>
 
       <section id="tecnologia" className="technology-banners">
-        <a className="ticket-cover page-width" href={ticketUrl} target="_blank" rel="noreferrer"><img src="/assets/ticketez-football.png" alt="TicketEZ para eventos de futebol"/><div className="ticket-cover-shade"/><div><img src="/assets/ticketez.png" alt="TicketEZ"/><span>{t('ticket.eyebrow')}</span><h3>{t('ticket.title1')} {t('ticket.title2')}</h3><strong>{t('ticket.cta')} <ArrowUpRight size={17}/></strong></div></a>
+        <a className="ticket-cover page-width" href={ticketUrl} target="_blank" rel="noreferrer"><img src="/assets/ticketez-mineirao-v2.png" alt="Menino entrando no Mineirão para uma experiência de futebol com a TicketEZ"/><div className="ticket-cover-shade"/><div><img src="/assets/ticketez.png" alt="TicketEZ"/><span>{t('ticket.eyebrow')}</span><h3>{t('ticket.title1')} {t('ticket.title2')}</h3><strong>{t('ticket.cta')} <ArrowUpRight size={17}/></strong></div></a>
         <div className="tech-light page-width"><img className="tech-light-bg" src="/assets/drafut-matchos-light.png" alt="Infraestrutura tecnológica clara para análise e scouting no futebol"/><div className="tech-light-shade"/><div className="tech-light-content"><span className="eyebrow">{t('tech.eyebrow')}</span><div className="tech-brands"><img src="/assets/drafut.png" alt="DRAFuT"/><b>+</b><strong>MatchOS</strong></div><h2>{t('tech.title2')}</h2><p>{t('tech.text')}</p><div className="tech-pills">{t('tech.chips',{returnObjects:true}).map(c=><span key={c}>{c}</span>)}</div></div></div>
       </section>
       <section id="contato" className="section closing"><div className="page-width closing-inner"><div><span className="eyebrow light">{t('closing.eyebrow')}</span><h2>{t('closing.title1')} <em>{t('closing.title2')}</em></h2></div><a className="button white" href="mailto:contato@soccez.com.br">{t('closing.cta')} <ArrowUpRight size={17}/></a></div></section>
